@@ -7,7 +7,8 @@ from dateutil.relativedelta import relativedelta
 # ドメインパスを格納する。
 domainPath = 'http://web.archive.org/web/20210801150703/https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/corona_portal/info/kunishihyou.files/'
 # 出力するフォルダパスを格納する。
-outputPath = "./content"
+# os.getcwd() : 現在のディレクトリを取得する。
+outputPath = os.getcwd() + "/content"
 
 # 2日前の日付取得
 # 参考 : https://zenn.dev/wtkn25/articles/python-relativedelta
@@ -29,7 +30,8 @@ if not os.path.isfile(outputPdfFileName):
     # 参考 : http://kyotoforest.blog82.fc2.com/blog-entry-28.html
     cmd = "wget -O '{}' '{}'".format(outputPdfFileName, domainPath + fileName + '.pdf')
     # コマンドを実行する。
-    subprocess.run(cmd)
+    # shell : True(参考 : https://stackoverflow.com/questions/18962785/oserror-errno-2-no-such-file-or-directory-while-using-python-subprocess-in-dj)
+    subprocess.run(cmd, shell=True)
 
 # PDFデータをもとに、CSVファイルを生成する。
 with open(outputCsvFileName, "w") as f:
