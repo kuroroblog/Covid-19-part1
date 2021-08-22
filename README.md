@@ -30,3 +30,14 @@ PDFのダウンロードのため、Wgetコマンドを活用します。以下�
 7. ターミナルを活用して、zipを展開して生成されたフォルダへ移動する。(`$ cd Desktop/Covid-19-part1-master`)
 8. `pip install -r requirements.txt`を実行する。(Pythonファイルを実行する上で必要なモジュールをインストールする。[参考](https://note.nkmk.me/python-pip-install-requirements/))
 9. `python main.py`を実行する。(content内へPDFファイル、CSVファイルが生成されていることを確認する。)
+
+## 結果画像
+
+**PDF**
+
+<img width="1680" alt="screenshot 2021-08-22 15 57 57" src="https://user-images.githubusercontent.com/23373288/130345685-80121400-af9c-4516-b5b3-a27104c32434.png">
+
+**CSV**
+
+<img width="1680" alt="screenshot 2021-08-22 15 59 12" src="https://user-images.githubusercontent.com/23373288/130345735-25ff2141-4a01-4fbc-9f1b-51bfc74d48a1.png">
+
